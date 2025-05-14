@@ -11,12 +11,12 @@ let package = Package(
             targets: ["AboutPackage"]),
     ],
     dependencies: [
-        .package(path: "../Core"), // Adjust the path to your Core package
+        .package(path: "../Core"), 
     ],
     targets: [
         .target(
             name: "AboutPackage",
-            dependencies: ["Core"]), // Add "Core" as a dependency to the target
+            dependencies: [.product(name: "Core", package: "Core")]), 
         .testTarget(
             name: "AboutPackageTests",
             dependencies: ["AboutPackage"]),
